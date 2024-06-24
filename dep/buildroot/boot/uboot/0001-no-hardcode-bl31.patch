@@ -1,0 +1,43 @@
+From f0693ccefd071fcd34180a4a29f130669e67f190 Mon Sep 17 00:00:00 2001
+From: Jonas R <joroec@gmx.net>
+Date: Mon, 2 Aug 2021 20:37:25 +0200
+Subject: [PATCH] no hardcode bl31
+
+---
+ print_fit_hab.sh | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/print_fit_hab.sh b/print_fit_hab.sh
+index c620d9e623..79dcf3e0f5 100755
+--- a/print_fit_hab.sh
++++ b/print_fit_hab.sh
+@@ -9,22 +9,22 @@ if grep -Eq "^CONFIG_IMX8MQ=y$" .config; then
+ TEE_LOAD_ADDR=0xfe000000
+ ATF_LOAD_ADDR=0x00910000
+ VERSION=v1
+-BL31=bl31-iMX8MQ.bin
++# BL31=bl31-iMX8MQ.bin
+ elif grep -Eq "^CONFIG_IMX8MM=y$" .config; then
+ TEE_LOAD_ADDR=0xbe000000
+ ATF_LOAD_ADDR=0x00920000
+ VERSION=v1
+-BL31=bl31-iMX8MM.bin
++# BL31=bl31-iMX8MM.bin
+ elif grep -Eq "^CONFIG_IMX8MN=y$" .config; then
+ TEE_LOAD_ADDR=0xbe000000
+ ATF_LOAD_ADDR=0x00960000
+ VERSION=v2
+-BL31=bl31-iMX8MN.bin
++# BL31=bl31-iMX8MN.bin
+ elif grep -Eq "^CONFIG_IMX8MP=y$" .config; then
+ TEE_LOAD_ADDR=0x56000000
+ ATF_LOAD_ADDR=0x00970000
+ VERSION=v2
+-BL31=bl31-iMX8MP.bin
++# BL31=bl31-iMX8MP.bin
+ fi
+ 
+ if [ -z "$BL31" ]; then
+-- 
+2.25.1
+

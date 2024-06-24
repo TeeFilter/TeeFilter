@@ -1,0 +1,41 @@
+# CONFIG_SPL_ATF=y
+# CONFIG_SPL_LOAD_FIT=y
+
+# CONFIG_IMX_HAB=y
+# CONFIG_CSF_SIZE=0x2000
+
+################################################################################
+# Although the following options seem helpful, they increase the SPL to a size
+# that does not allow the CSF sequence for the SPL to have enough space. Therefore,
+# secure boot is not possible with those enabled and they need to be deactivated.
+################################################################################
+
+# CONFIG_FIT_VERBOSE=y
+# CONFIG_SPL_FIT_PRINT=y
+# CONFIG_SPL_LOAD_FIT_FULL=y
+
+# CONFIG_SPL_LOG=y
+# CONFIG_SPL_LOG_CONSOLE=y
+# CONFIG_LOG=y
+# CONFIG_LOG_CONSOLE=y
+# CONFIG_LOGLEVEL=3
+# CONFIG_SPL_LOGLEVEL=3
+# DEBUG=y
+
+# CONFIG_SPL_GZIP=y
+# CONFIG_SPL_LZMA=y
+# CONFIG_SPL_LZ4=y
+# CONFIG_SPL_LZO=y
+# CONFIG_SPL_ZSTD=y
+
+# CONFIG_SPL_OPTEE=y
+
+
+################################################################################
+# On the other side, the following option shrinks the size of the image.
+# However, we then rely on a U-Boot-style boot order where the first firmware
+# image in the FIT is assumed to be U-Boot proper. As we want somewhat more
+# options here (e.g. selection on OS property in FIT), the following option needs
+# to be set to "n".
+################################################################################
+# CONFIG_SPL_FIT_IMAGE_TINY=n

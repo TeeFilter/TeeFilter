@@ -1,0 +1,4 @@
+config BR2_PACKAGE_UPDATER
+    bool "updater"
+    help
+      The TeeFilter rule updater kernel module.
