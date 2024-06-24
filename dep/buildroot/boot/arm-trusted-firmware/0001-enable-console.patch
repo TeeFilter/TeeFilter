@@ -1,0 +1,23 @@
+From 544495e98db950839d154bc66b1d5f2e6e2ad37e Mon Sep 17 00:00:00 2001
+From: Jonas R <joroec@gmx.net>
+Date: Mon, 2 Aug 2021 16:48:06 +0200
+Subject: [PATCH] enable console
+
+---
+ plat/imx/imx8m/imx8mq/include/platform_def.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plat/imx/imx8m/imx8mq/include/platform_def.h b/plat/imx/imx8m/imx8mq/include/platform_def.h
+index 6d838fc3..033cf56b 100644
+--- a/plat/imx/imx8m/imx8mq/include/platform_def.h
++++ b/plat/imx/imx8m/imx8mq/include/platform_def.h
+@@ -150,5 +150,5 @@
+ #define CNTFID1_OFF			U(0x24)
+ #define COUNTER_FREQUENCY		8000000 /* 8MHz */
+ 
+-#define DEBUG_CONSOLE			0
++#define DEBUG_CONSOLE			1
+ #define IMX_WDOG_B_RESET
+-- 
+2.25.1
+
